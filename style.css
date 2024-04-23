@@ -1,0 +1,654 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+html, body {
+    font-family: 'Raleway';
+    font-weight: 200;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.5px;
+    margin: 0px;
+    color: white;
+    background-color: rgba(0,0,20,5);
+    
+    
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    filter: brightness(0.4);
+    z-index: -1;
+    max-width: 100%;
+}
+
+
+/* Styling of the navigation bar ---------------- */
+
+
+.navsection {
+    position: relative;
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    position: absolute;
+    width: 100%;
+    font-size: 19px;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    height: fit-content;
+    z-index: 10;
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(4px);
+    background-color: #09111867;
+}
+
+.navsection::after{ 
+    background-color: #091118;
+}
+
+.navcategories {
+    padding-left: 0px;
+    position: relative;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 33px;
+    margin: 0;
+}
+
+.category::before {
+    content: "//" ;
+    padding-right: 0px;
+
+    font-size: 20px;
+}
+
+
+
+
+.category:hover {
+    font-weight: bold;
+}
+
+.category {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+
+
+.categorypath {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navcategories:hover .category {
+    opacity: 0.3;
+}
+
+.navcategories:hover .category:hover {
+    opacity: 1;
+}
+
+.enumerator {
+    position: relative;
+    left: -20px;
+    top: -20px;
+    font-size: 10px;
+}
+
+#sidenav {
+    position: fixed; /* Fixed/sticky position */
+    left: 0px; /* Place the sidenav at the left of the page */
+    top: 200px; /* Position the sidenav at the top of the page */
+
+    height: 100%; /* Full-height */
+    width: 0; /* Start with the sidenav hidden */
+    /* Add other styling properties as needed */
+
+    transform: rotate(270deg);
+    transform-origin: top left;
+}
+
+
+
+
+
+
+.home {
+    position:relative;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex; /* Add this */
+    align-items: center; /* Change this */
+    justify-content: center; /* Change this */
+
+}
+
+.name {
+    
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 200;
+    letter-spacing: -3px;
+    padding: 0px 20px;
+    background: transparent;
+    z-index: 1;
+    position: relative;
+    display: flex; /* Add this */
+
+}
+
+.subname {
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: normal;
+}
+
+.blur-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+    z-index: 1;
+    padding: 10px; /* Add some padding if you want */
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 20, 0.75);
+}
+
+.blur-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+
+
+iframe {
+    position: absolute;
+    border: 0px;
+}
+
+.about {
+    display: flex;
+
+    width: 100%;
+    height: 100vh;
+
+}
+
+.abouttext {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    padding: 10px;
+    margin: 20px 20px;
+    justify-content: left;
+}
+
+.textbox {
+    position: relative;
+    display: flex;
+    padding: 0px;
+    flex-direction: column;
+    
+    background-color: #41414100;
+    border-radius: 10px;
+    width: 60vw;
+}
+
+.titletext {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: -3px;
+    padding: 0px 20px;
+    background: transparent;
+    z-index: 1;
+    position: relative;
+    display: flex; /* Add this */
+    margin-right: 20px;
+    border-bottom: 1px solid white;
+}
+
+p {
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 3.5rem;
+}
+
+#face {
+    position: absolute;
+    top: 60vh;
+    left: 50vw;
+    z-index: -1;
+}
+
+.aboutwork {
+    width: 100%;
+}
+
+
+h1 {
+    padding: 20px;
+    font-size: 50px;
+    font-weight: 200;
+}
+
+.aboutlist {
+
+    position: relative;
+    margin: 0px;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    
+    width: 100%;
+    font-size: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    background-color: transparent;
+    height: fit-content;
+    z-index: 10;
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(4px);
+    background-color: #09111867;
+    flex-direction: column;
+}
+
+.skill  {
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.projects {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectsdisplay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.projectCategory {
+  color: hsl(263, 100%, 50%);
+  font-size: 2rem;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  margin: 10px;
+  margin-bottom: 15px;
+}
+
+.projectscontainer {
+  padding-left: 0px;
+  position: relative;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 33px;
+  margin: 0;
+  
+}
+
+.projectType {
+  padding: 10px;
+  border-radius: 5%;
+  background-color: #091118;
+  width: 25vw;
+  height: 70vh;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.projectlist {
+  padding: 0;
+}
+.project {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.project:hover {
+  background-color: rgba(33 ,33, 33, 0.5);
+}
+
+.projecttext {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.projecttitle {
+  font-size: 1.5rem;
+
+}
+
+.projectdesc {
+  filter: opacity(0.4);
+}
+
+.projectpreview {
+  width: 100px;
+  max-width: 160px;
+  max-height: 120px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* I DID NOT MAKE THESE THEY ARE OPEN SOURCE, JUST IGNORE */
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(0, 0, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    bottom: 5vh;
+    right: 3vw;
+    z-index: 100;
+    opacity: 0;
+    /* transition: opacity 1s ease; */
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(0, 0, 20);
+    align-items: center;
+  }
+
+
+  
+  .button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
+  
+  .Btn {
+    
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(27, 27, 27);
+    display: none; /* change this after*/
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed;
+    right: 8vw;
+    top: 1vh;
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.11);
+    transform: scale(1);
+  }
+  
+  .svgIc {
+    fill: #2196f3;
+  }
+  
+  .icon2 {
+    width: 18px;
+    height: 5px;
+    border-bottom: 2px solid #2196f3;
+    border-left: 2px solid #2196f3;
+    border-right: 2px solid #2196f3;
+  }
+  
+  .tooltip2 {
+    position: absolute;
+    right: -80px;
+    opacity: 0;
+    background-color: rgb(12, 12, 12);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.2s;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+  
+  .tooltip2::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: rgb(12, 12, 12);
+    background-size: 1000%;
+    background-position: center;
+    transform: rotate(45deg);
+    left: -5%;
+    transition-duration: 0.3s;
+  }
+  
+  .Btn:hover .tooltip2 {
+    opacity: 1;
+    transition-duration: 0.3s;
+  }
+  
+  .Btn:hover {
+    background-color: #2196f3;
+    transition-duration: 0.3s;
+  }
+  
+  .Btn:hover .icon2 {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+  }
+  
+  .Btn:hover .svgIc {
+    fill: black;
+    animation: slide-in-top 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  @keyframes slide-in-top {
+    0% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+
+  ul {
+    list-style: none;
+  }
+  
+  .example-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 1vh;
+    left:1vw;
+    padding: 0;
+
+  }
+  .example-2 .icon-content {
+    margin: 0 10px;
+    position: relative;
+  }
+  .example-2 .icon-content .tooltip {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 15px;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  .example-2 .icon-content:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+  }
+  .example-2 .icon-content a {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    color: #4d4d4d;
+    background-color: #ffff;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover {
+    box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 50%);
+  }
+  .example-2 .icon-content a svg {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+  }
+  .example-2 .icon-content a:hover {
+    color: white;
+  }
+  .example-2 .icon-content a .filled {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .example-2 .icon-content a:hover .filled {
+    height: 100%;
+  }
+  .example-2 .icon-content a[data-social="spotify"] .filled,
+  .example-2 .icon-content a[data-social="spotify"] ~ .tooltip {
+    background-color: #1db954;
+  }
+  .example-2 .icon-content a[data-social="pinterest"] .filled,
+  .example-2 .icon-content a[data-social="pinterest"] ~ .tooltip {
+    background-color: #bd081c;
+  }
+  .example-2 .icon-content a[data-social="dribbble"] .filled,
+  .example-2 .icon-content a[data-social="dribbble"] ~ .tooltip {
+    background-color: #ea4c89;
+  }
+  .example-2 .icon-content a[data-social="telegram"] .filled,
+  .example-2 .icon-content a[data-social="telegram"] ~ .tooltip {
+    background-color: #0088cc;
+  }
+  
