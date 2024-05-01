@@ -101,44 +101,48 @@ function draw() {
   
   //visualizeVelocityField(Field)
 
-  for (i = 0; i < Field.length; i++) {
-  for (j = 0; j < Field[i].length; j++) {
-    let positionVector = Field[i][j][Field[i][j].length - 1]; // get the last position vector
-    let newposition = positionVector.copy();
-    let velocityVector = CalculateVelocity(newposition);
-    newposition = newposition.add(velocityVector); // add velocity to position
-    Field[i][j].push(newposition); // push the new position
-
-
-
-    for(k = 0; k < Field[i][j].length; k++){
-      //let alpha = 255 / (k + 1); // Add 1 to avoid division by zero
-      
-          
-      circle(Field[i][j][k].x , Field[i][j][k].y , 1); // show position
-    }
-    
-
-    if(Field[i][j].length > 20) {
-      Field[i][j].splice(0, 1)
-    }
-
-    if(velocityVector.mag() < .1) { // if the particle is moving too slow, take away from the front
-      Field[i][j].splice(Field[i][j].length - 1, 1)
-    }
-
-
-    if(random(0, 1) < resetchance) {
-      Field[i][j] = getInitialFieldPosition(i , j);
-    }
-
-
-  }
-}
-
+  gameloop();
+  
 } // ---------------------------------------------------- end of draw()
 
+function gameloop() {
 
+  for (i = 0; i < Field.length; i++) {
+    for (j = 0; j < Field[i].length; j++) {
+      let positionVector = Field[i][j][Field[i][j].length - 1]; // get the last position vector
+      let newposition = positionVector.copy();
+      let velocityVector = CalculateVelocity(newposition);
+      newposition = newposition.add(velocityVector); // add velocity to position
+      Field[i][j].push(newposition); // push the new position
+  
+  
+  
+      for(k = 0; k < Field[i][j].length; k++){
+        //let alpha = 255 / (k + 1); // Add 1 to avoid division by zero
+        
+            
+        circle(Field[i][j][k].x , Field[i][j][k].y , 1); // show position
+      }
+      
+  
+      if(Field[i][j].length > 20) {
+        Field[i][j].splice(0, 1)
+      }
+  
+      if(velocityVector.mag() < .1) { // if the particle is moving too slow, take away from the front
+        Field[i][j].splice(Field[i][j].length - 1, 1)
+      }
+  
+  
+      if(random(0, 1) < resetchance) {
+        Field[i][j] = getInitialFieldPosition(i , j);
+      }
+  
+  
+    }
+  }
+  
+}
 
 
 
@@ -162,17 +166,6 @@ function CalculateVelocity(p) {
 
 } //---------------------------------------------- end of vectorFunction()
 
-
-
-
-
-
-
-
-
-
-
-// Field Generation and getting initial positions
 
 
 function generateField(nrows, ncols) {
@@ -202,4 +195,28 @@ function getInitialFieldPosition(i, j) {
   let x = (i * gapBetweenRows) - width / 2;
   let y = -1*((j * gapBetweenCols) - height / 2);
   return [createVector(x , y)]
+}
+z
+
+function windowResized() {
+
+  resizeCanvas(windowWidth, windowHeight);colorMode(rgb);background(0,0,20, 255);Field = generateField(30,30)
+}
+
+let radius = 100; // Set the radius as per your requirement
+
+function mouseIsPressed() {
+  circle(20, 20, 20)
+  for (let i = 0; i < Field.length; i++) {
+    for (let j = 0; j < Field[i].length; j++) {
+      let positionVector = Field[i][j][Field[i][j].length - 1]; // get the last position vector
+      let d = dist(mouseX, mouseY, positionVector.x, positionVector.y);
+      if (d < radius) {
+        let newposition = positionVector.copy();
+        let velocityVector = CalculateVelocity(newposition);
+        newposition = newposition.add(velocityVector); // add velocity to position
+        Field[i][j].push(newposition); // push the new position
+      }
+    }
+  }
 }

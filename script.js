@@ -13,7 +13,7 @@ new fullpage('#fullpage', {
     // options here
     autoScrolling: true,
     scrollHorizontally: true,
-    anchors: ['home' , 'about' , 'projects' , 'contact'],
+    anchors: ['home' , 'about' , 'projects'],
 
     afterLoad: function(origin, destination, direction){
         var loadedSection = this;
