@@ -7,24 +7,22 @@ let gapBetweenCols;
 let counter = 0;
 let weights = [];
 let maxspeed = 1;
-let resetchance = 0.005;
+let oscillator = 0;
+let resetchance = 0.0005;
+let n = 20
 
 let Functions, functionPicker;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  Field = generateField(30, 30);
+  Field = generateField(n, n);
   angleMode(degrees)
+  background(0,0,20,255)
 
 
 
   Functions = [
-    function(p) {
-      
-      let x = p.x * cos(p.y);
-      let y = sqrt(abs(p.x));
-      return createVector(x , y);
-    },
+
     function(p) {
       let x = -p.y + 0.5*p.x;
       let y = p.x;
@@ -38,18 +36,7 @@ function setup() {
     function(p) {
       return createVector(p.x, p.y)
     },
-    function(p) {
-      let x = -10000 * p.y / (p.x*p.x + p.y*p.y)
-      let y = 10000 * p.x / (p.x*p.x + p.y*p.y)
-      
-      return createVector(x , y)
-    }, 
-    function(p) {
-      let x = 1000 * p.x / (p.x*p.x + p.y*p.y)
-      let y = 10000 * p.y / (p.x*p.x + p.y*p.y)
-      
-      return createVector(x , y)
-    },
+
     function(p) {
       let x = 2000 * p.x / (p.x*p.x + p.y*p.y)
       let y = 2000 * p.y / (p.x*p.x + p.y*p.y)
@@ -89,7 +76,7 @@ function setup() {
 
 function draw() {
   colorMode(RGB)
-  background(0,0, 20,5);
+  background(0,0, 20,10);
 
   translate(width / 2, height / 2);
   scale(1, -1);
@@ -106,6 +93,7 @@ function draw() {
 } // ---------------------------------------------------- end of draw()
 
 function gameloop() {
+  let counter = 0;
 
   for (i = 0; i < Field.length; i++) {
     for (j = 0; j < Field[i].length; j++) {
@@ -149,6 +137,13 @@ function gameloop() {
 function CalculateVelocity(p) {
   
   let vector = Functions[functionPicker](p);
+
+  // let pseudox = map(mouseX , 0 , width, 0 , 1)
+  // let pseudoy = map(mouseY, 0 , height, 0 , 1)
+  
+  // let mousevec = createVector(pseudox - p.x ,pseudoy - p.y);
+  //vector.add(mousevec)
+
   vector.mult(vectorScaling)
   vector.setMag(min(vector.mag(), maxspeed))
 
@@ -196,27 +191,13 @@ function getInitialFieldPosition(i, j) {
   let y = -1*((j * gapBetweenCols) - height / 2);
   return [createVector(x , y)]
 }
-z
+
 
 function windowResized() {
 
-  resizeCanvas(windowWidth, windowHeight);colorMode(rgb);background(0,0,20, 255);Field = generateField(30,30)
+  resizeCanvas(windowWidth, windowHeight);
+  colorMode(RGB);
+  background(0,0,20, 255);
+  Field = generateField(n,n);
 }
 
-let radius = 100; // Set the radius as per your requirement
-
-function mouseIsPressed() {
-  circle(20, 20, 20)
-  for (let i = 0; i < Field.length; i++) {
-    for (let j = 0; j < Field[i].length; j++) {
-      let positionVector = Field[i][j][Field[i][j].length - 1]; // get the last position vector
-      let d = dist(mouseX, mouseY, positionVector.x, positionVector.y);
-      if (d < radius) {
-        let newposition = positionVector.copy();
-        let velocityVector = CalculateVelocity(newposition);
-        newposition = newposition.add(velocityVector); // add velocity to position
-        Field[i][j].push(newposition); // push the new position
-      }
-    }
-  }
-}
