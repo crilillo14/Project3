@@ -1,0 +1,1 @@
+This is my programming portfolio! This most likely is going to be a temporary solution for a couple of months, because I really want to incorporate more functionality and make it more dynamic, which I'll probably use a front end library like react to do so.
