@@ -311,6 +311,9 @@ sl-icon-button {
   padding-top: 20px;
 }
 
+sl-tag {
+  margin: 2px;
+}
 
 
 
@@ -364,7 +367,17 @@ h2 {
   filter: opacity(0.7);
 }
 
-@media only screen and (max-width: 1270px) {
+@media only screen and (max-width: 500px) {
+  .projecttypes {
+      flex-direction: column;
+  }
+  .divisor{
+    display: none;
+  }
+  
+}
+
+@media only screen and (max-width: 1355px) {
   .projecttypes li a::after {
       content: attr(data-abbrev);
   }
@@ -373,7 +386,7 @@ h2 {
       display: none;
   }
 }
-@media only screen and (min-width: 1271px) {
+@media only screen and (min-width: 1356px) {
   .projecttypes li a::before {
       content: attr(data-full);
   }
