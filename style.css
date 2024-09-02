@@ -131,18 +131,19 @@ html, body {
     z-index: 1;
     position: relative;
     display: flex; /* Add this */
-   
-
-}
+   }
 
 .supaname {
     
-    background: -webkit-linear-gradient(90deg, rgba(58, 88, 255, 0.408) 0%, rgb(31, 0, 209) 100%);
+    background: -webkit-linear-gradient(0deg, #247BA0 0%, #FFFFB5 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-right: 20px;
     padding-bottom: 20px;
 }
+
+
+jreaiogtioagmteaiogirjoartj
 
 
 .subname {
@@ -432,7 +433,8 @@ h2 {
 .image {
   max-width: 600px;
   padding: 20px;
-  filter: grayscale(0.2);
+  filter:  brightness(1.2) saturate(1.2);
+
 }
 
 .face {

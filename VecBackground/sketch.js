@@ -8,7 +8,7 @@ let counter = 0;
 let weights = [];
 let maxspeed = 1;
 let oscillator = 0;
-let resetchance = 0.0005;
+let resetchance = 0.005;
 let n = 20
 
 let Functions, functionPicker;
